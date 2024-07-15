@@ -1,13 +1,34 @@
 const MY_LIBRARY = [];
 const libList = document.querySelector("#libList");
 
-function book(title, author) {
+function Book(title, author) {
     this.title = title;
     this.author = author;
 }
-
 function displayLib(){
-    for (book in MY_LIBRARY){
-        
+    libList.innerHTML = "";
+    for (let book of MY_LIBRARY){
+        const item = document.createElement("li");
+        const title = document.createElement("div");
+        const author = document.createElement("div");
+        title.classList.add("title");
+        title.textContent = book.title;
+        author.classList.add("author");
+        author.textContent = book.author;
+
+        item.append(title, author);
+        libList.append(item);
     }
 }
+let current_title = "foo"
+let current_author = "foo-two"
+function addBook(){
+    let newBook = new Book(current_title, current_author);
+    MY_LIBRARY.push(newBook);
+    displayLib();
+}
+
+addBook();
+current_title = "FiFi";
+current_author = "your Mom";
+addBook();
