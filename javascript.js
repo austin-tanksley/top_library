@@ -1,5 +1,8 @@
 const MY_LIBRARY = [];
 const libList = document.querySelector("#libList");
+const addButton = document.querySelector("button");
+const form = document.querySelector("form")
+
 
 function Book(title, author) {
     this.title = title;
@@ -27,8 +30,16 @@ function addBook(){
     MY_LIBRARY.push(newBook);
     displayLib();
 }
+function buttonClick(event){
+    event.preventDefault();
+    current_title = document.getElementById("title").value;
+    current_author = document.getElementById("author").value;
+    addBook();
+}
 
 addBook();
 current_title = "FiFi";
 current_author = "your Mom";
 addBook();
+
+form.addEventListener("submit", buttonClick, false);
