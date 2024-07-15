@@ -1,0 +1,17 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+body {
+    display: flex;
+    justify-content: center;
+}
+main {
+    width: 1080px;
+    background-color: beige;
+}
+li {
+    display: flex;
+    gap: 1em;
+}
