@@ -43,7 +43,9 @@ function displayLib(){
         checkRead.append(labelRead, checkbox)
         item.append(title, author, checkRead, delete_button);
         libList.append(item);
-
+        
+        document.getElementById("title").value = null;
+        document.getElementById("author").value =null;
         i++;
     }
 }
